@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interactive button</title>
+    <style>
+        #message
+            font-size:1.5em;
+            color: blue;
+        }
+        button
+        {
+            padding: 10px 20px;
+            font-size:1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>laughing club!!!</h1> 
+    <p id="message">click the button for some laughs!</p>
+    <button id="funnyTextBtn">make me laugh</button>
+    <script>
+        const funnyTexts=["i told my computer i needed a break,and now it wont stop sending me kitkats",
+           " why dont skeliton fight each other?they dont have the guts",
+           "i tried to catch some fog,but i mist!",
+          " i am on a seafood diet.i see food,and i eat it"
+        ];
+        const messageElement=document.getElementById('message');
+        const buttonElement=document.getElementById('funnyTextBtn');
+        buttonElement.addEventListener('click',()=>
+    {
+        const randomIndex=Math.floor(Math.random()*funnyTexts.length);
+        const randomText=funnyTexts[randomIndex];
+        messageElement.textContent=randomText;
+    });
+    </script>
+</body>
+</html>
